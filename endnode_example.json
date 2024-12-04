@@ -1,14 +1,108 @@
 [
     {
+        "id": "b8939b6d8dda5c38",
+        "type": "tab",
+        "label": "EndNode Relay Example",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e748227717d1a963",
+        "type": "group",
+        "z": "b8939b6d8dda5c38",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "9b482dfa51a27c65",
+            "c4122250458ad048"
+        ],
+        "x": 494,
+        "y": 299,
+        "w": 432,
+        "h": 142
+    },
+    {
+        "id": "63130894d3a55fdb",
+        "type": "group",
+        "z": "b8939b6d8dda5c38",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "6966003bfc36520b",
+            "f13dc22483fd2696"
+        ],
+        "x": 974,
+        "y": 299,
+        "w": 472,
+        "h": 142
+    },
+    {
+        "id": "f7dea52a82065166",
+        "type": "group",
+        "z": "b8939b6d8dda5c38",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "466b5b61fa269d89",
+            "ce1f5a90e8af3f9c",
+            "98364da741b430a9",
+            "6439d7d72cca2ba8",
+            "063c64bb13d849ac",
+            "93ae09e3ad18afee",
+            "0eab33756b0659d4",
+            "75a816b606eaf59d",
+            "4a301b3bdd2c94b9",
+            "e0fc48d92a389c06",
+            "9c0a5d173288e342",
+            "3df133009d5ec87f",
+            "6e5a77be575a7f5a",
+            "efbc96a5323d57b3",
+            "c372005b2d3fe9a6",
+            "e4817a32f0d59b32",
+            "815c795c2e1e7762",
+            "1bbc7d5528613e83",
+            "c13f667cc1d2cf92",
+            "78d8da8a7bd5c3a1",
+            "1936a330c5307f7a"
+        ],
+        "x": 54,
+        "y": 59,
+        "w": 372,
+        "h": 622
+    },
+    {
         "id": "6966003bfc36520b",
         "type": "ncd-gateway-node",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "63130894d3a55fdb",
         "name": "",
-        "connection": "1869a2ff19ac52a0",
+        "connection": "",
         "unknown_devices": true,
         "outputs": 2,
-        "x": 750,
-        "y": 320,
+        "x": 1110,
+        "y": 400,
         "wires": [
             [
                 "e3df83fd38dbf123"
@@ -21,7 +115,8 @@
     {
         "id": "466b5b61fa269d89",
         "type": "function",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "R1-ON ",
         "func": "msg.payload = {};\nmsg.payload.data = [0xAA,0x07,0xBD,0x01,0xFD,0x01,0x01,0x01,0x00,0x6F];\n// msg.payload.address = \"00:13:a2:00:41:db:8c:15\";\nreturn msg;",
         "outputs": 1,
@@ -30,7 +125,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 100,
+        "y": 180,
         "wires": [
             [
                 "c4122250458ad048"
@@ -40,7 +135,8 @@
     {
         "id": "ce1f5a90e8af3f9c",
         "type": "inject",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "ON",
         "props": [],
         "repeat": "",
@@ -49,7 +145,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 100,
+        "y": 180,
         "wires": [
             [
                 "466b5b61fa269d89"
@@ -59,7 +155,8 @@
     {
         "id": "98364da741b430a9",
         "type": "function",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "R1-OFF",
         "func": "msg.payload = {};\nmsg.payload.data = [0xAA, 0x07, 0xBD, 0x01, 0xFD, 0x00, 0x01, 0x01, 0x00, 0x6E];\n// msg.payload.address = \"00:13:a2:00:41:db:8c:15\";\nreturn msg;",
         "outputs": 1,
@@ -68,7 +165,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 140,
+        "y": 220,
         "wires": [
             [
                 "c4122250458ad048"
@@ -78,7 +175,8 @@
     {
         "id": "6439d7d72cca2ba8",
         "type": "inject",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "OFF",
         "props": [],
         "repeat": "",
@@ -87,7 +185,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 140,
+        "y": 220,
         "wires": [
             [
                 "98364da741b430a9"
@@ -97,7 +195,8 @@
     {
         "id": "063c64bb13d849ac",
         "type": "function",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "R2-ON ",
         "func": "msg.payload = {};\nmsg.payload.data = [0xAA,0x07,0xBD,0x01,0xFD,0x01,0x01,0x02,0x00,0x70];\n// msg.payload.address = \"00:13:a2:00:41:db:8c:15\";\nreturn msg;",
         "outputs": 1,
@@ -106,7 +205,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 240,
+        "y": 320,
         "wires": [
             [
                 "c4122250458ad048"
@@ -116,7 +215,8 @@
     {
         "id": "93ae09e3ad18afee",
         "type": "inject",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "ON",
         "props": [],
         "repeat": "",
@@ -125,7 +225,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 240,
+        "y": 320,
         "wires": [
             [
                 "063c64bb13d849ac"
@@ -135,7 +235,8 @@
     {
         "id": "0eab33756b0659d4",
         "type": "function",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "R2-OFF",
         "func": "msg.payload = {};\nmsg.payload.data = [0xAA, 0x07, 0xBD, 0x01, 0xFD, 0x00, 0x01, 0x02, 0x00, 0x6F];\n// msg.payload.address = \"00:13:a2:00:41:db:8c:15\";\nreturn msg;",
         "outputs": 1,
@@ -144,7 +245,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 280,
+        "y": 360,
         "wires": [
             [
                 "c4122250458ad048"
@@ -154,7 +255,8 @@
     {
         "id": "75a816b606eaf59d",
         "type": "inject",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "OFF",
         "props": [],
         "repeat": "",
@@ -163,7 +265,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 280,
+        "y": 360,
         "wires": [
             [
                 "0eab33756b0659d4"
@@ -173,7 +275,8 @@
     {
         "id": "4a301b3bdd2c94b9",
         "type": "function",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "R3-ON ",
         "func": "msg.payload = {};\nmsg.payload.data = [0xAA,0x07,0xBD,0x01,0xFD,0x01,0x01,0x03,0x00,0x71];\n// msg.payload.address = \"00:13:a2:00:41:db:8c:15\";\nreturn msg;",
         "outputs": 1,
@@ -182,7 +285,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 380,
+        "y": 460,
         "wires": [
             [
                 "c4122250458ad048"
@@ -192,7 +295,8 @@
     {
         "id": "e0fc48d92a389c06",
         "type": "inject",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "ON",
         "props": [],
         "repeat": "",
@@ -201,7 +305,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 380,
+        "y": 460,
         "wires": [
             [
                 "4a301b3bdd2c94b9"
@@ -211,7 +315,8 @@
     {
         "id": "9c0a5d173288e342",
         "type": "function",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "R3-OFF",
         "func": "msg.payload = {};\nmsg.payload.data = [0xAA, 0x07, 0xBD, 0x01, 0xFD, 0x00, 0x01, 0x03, 0x00, 0x70];\n// msg.payload.address = \"00:13:a2:00:41:db:8c:15\";\nreturn msg;",
         "outputs": 1,
@@ -220,7 +325,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "c4122250458ad048"
@@ -230,7 +335,8 @@
     {
         "id": "3df133009d5ec87f",
         "type": "inject",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "OFF",
         "props": [],
         "repeat": "",
@@ -239,7 +345,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "9c0a5d173288e342"
@@ -249,7 +355,8 @@
     {
         "id": "6e5a77be575a7f5a",
         "type": "function",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "R4-ON ",
         "func": "msg.payload = {};\nmsg.payload.data = [0xAA,0x07,0xBD,0x01,0xFD,0x01,0x01,0x04,0x00,0x72];\n// msg.payload.address = \"00:13:a2:00:41:db:8c:15\";\nreturn msg;",
         "outputs": 1,
@@ -258,7 +365,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 520,
+        "y": 600,
         "wires": [
             [
                 "c4122250458ad048"
@@ -268,7 +375,8 @@
     {
         "id": "efbc96a5323d57b3",
         "type": "inject",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "ON",
         "props": [],
         "repeat": "",
@@ -277,7 +385,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 520,
+        "y": 600,
         "wires": [
             [
                 "6e5a77be575a7f5a"
@@ -287,7 +395,8 @@
     {
         "id": "c372005b2d3fe9a6",
         "type": "function",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "R4-OFF",
         "func": "msg.payload = {};\nmsg.payload.data = [0xAA, 0x07, 0xBD, 0x01, 0xFD, 0x00, 0x01, 0x04, 0x00, 0x71];\n// msg.payload.address = \"00:13:a2:00:41:db:8c:15\";\nreturn msg;",
         "outputs": 1,
@@ -296,7 +405,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
                 "c4122250458ad048"
@@ -306,7 +415,8 @@
     {
         "id": "e4817a32f0d59b32",
         "type": "inject",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "OFF",
         "props": [],
         "repeat": "",
@@ -315,7 +425,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
                 "c372005b2d3fe9a6"
@@ -325,57 +435,63 @@
     {
         "id": "815c795c2e1e7762",
         "type": "comment",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "Relay 1",
         "info": "",
         "x": 130,
-        "y": 60,
+        "y": 140,
         "wires": []
     },
     {
         "id": "1bbc7d5528613e83",
         "type": "comment",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "Relay 2",
         "info": "",
         "x": 130,
-        "y": 200,
+        "y": 280,
         "wires": []
     },
     {
         "id": "c13f667cc1d2cf92",
         "type": "comment",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "Relay 3",
         "info": "",
         "x": 130,
-        "y": 340,
+        "y": 420,
         "wires": []
     },
     {
         "id": "78d8da8a7bd5c3a1",
         "type": "comment",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
         "name": "Relay 4",
         "info": "",
         "x": 130,
-        "y": 480,
+        "y": 560,
         "wires": []
     },
     {
         "id": "9b482dfa51a27c65",
         "type": "comment",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "e748227717d1a963",
         "name": "Change address to match your endnode controller",
         "info": "",
-        "x": 630,
-        "y": 260,
+        "x": 710,
+        "y": 340,
         "wires": []
     },
     {
         "id": "c4122250458ad048",
         "type": "change",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
+        "g": "e748227717d1a963",
         "name": "Assign Target",
         "rules": [
             {
@@ -391,8 +507,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 320,
+        "x": 600,
+        "y": 400,
         "wires": [
             [
                 "6966003bfc36520b"
@@ -402,7 +518,7 @@
     {
         "id": "e3df83fd38dbf123",
         "type": "debug",
-        "z": "2c93f197478d871e",
+        "z": "b8939b6d8dda5c38",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
@@ -411,20 +527,30 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1000,
-        "y": 320,
+        "x": 1540,
+        "y": 400,
         "wires": []
     },
     {
-        "id": "1869a2ff19ac52a0",
-        "type": "ncd-gateway-config",
-        "name": "Zigmo",
-        "comm_type": "serial",
-        "ip_address": "",
-        "tcp_port": "2101",
-        "port": "/dev/tty.usbserial-AB0JTRX6",
-        "baudRate": "115200",
-        "pan_id": "7FFF",
-        "rssi": false
+        "id": "f13dc22483fd2696",
+        "type": "comment",
+        "z": "b8939b6d8dda5c38",
+        "g": "63130894d3a55fdb",
+        "name": "Edit the Wireless Gateway to assign your serial device",
+        "info": "",
+        "x": 1220,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "1936a330c5307f7a",
+        "type": "comment",
+        "z": "b8939b6d8dda5c38",
+        "g": "f7dea52a82065166",
+        "name": "Relay Control Triggers",
+        "info": "",
+        "x": 180,
+        "y": 100,
+        "wires": []
     }
 ]
